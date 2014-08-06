@@ -120,20 +120,6 @@ void OpenniWrapperNode::initializeOpenni()
         sensor = m_vDevice[i]->hasSensor(SENSOR_DEPTH); if (sensor) cout <<"DEPTH ";
         cout<<endl;
 
-        ImageRegistrationMode mode = IMAGE_REGISTRATION_DEPTH_TO_COLOR;
-        bool registrationSupported = m_vDevice[i]->getImageRegistrationMode();
-        if(registrationSupported)
-        {
-            cout<<"Image registration SUPPORTED"<<endl;
-            rc = m_vDevice[i]->setImageRegistrationMode(mode);
-            // handle ret
-            if (rc != STATUS_OK)
-            {
-                std::cout<<"Could not set the image registration on. Some error occured  "<<rc<<std::endl;
-            }
-        } else {
-            cout<<"Image registration NOT SUPPORTED"<<endl;
-        }
 
         rc = m_vDevice[i]->setDepthColorSyncEnabled(true);
         // handle rc
@@ -191,6 +177,21 @@ void OpenniWrapperNode::initializeOpenni()
         // Register to new frame
         m_vDepth[i]->addNewFrameListener(m_vDepthCallback[i]);
         m_vColor[i]->addNewFrameListener(m_vColorCallback[i]);
+        
+	ImageRegistrationMode mode = IMAGE_REGISTRATION_DEPTH_TO_COLOR;
+        bool registrationSupported = m_vDevice[i]->isImageRegistrationModeSupported(mode);
+        if(registrationSupported)
+        {
+            cout<<"Image registration SUPPORTED"<<endl;
+            rc = m_vDevice[i]->setImageRegistrationMode(mode);
+            // handle ret
+            if (rc != STATUS_OK)
+            {
+                std::cout<<"Could not set the image registration on. Some error occured  "<<rc<<std::endl;
+            }
+        } else {
+            cout<<"Image registration NOT SUPPORTED"<<endl;
+        }
     }
 }
 

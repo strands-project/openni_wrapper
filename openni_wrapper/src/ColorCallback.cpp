@@ -95,9 +95,9 @@ void ColorCallback::analyzeFrame(const VideoFrameRef& frame)
         camInfo.width = frame.getWidth();
         camInfo.height = frame.getHeight();
         camInfo.distortion_model = "plumb_bob";
-        camInfo.K = {{525.0, 0.0, 319.5, 0.0, 525.0, 239.5, 0.0, 0.0, 1.0}};
+        camInfo.K = {{570.3422241210938, 0.0, 319.5, 0.0, 570.3422241210938, 239.5, 0.0, 0.0, 1.0}};
         camInfo.R = {{1.0, 0.0, 0.0, 0.0, 1.0, 0.0, 0.0, 0.0, 1.0}};
-        camInfo.P = {{525.0, 0.0, 319.5, 0.0, 0.0, 525.0, 239.5, 0.0, 0.0, 0.0, 1.0, 0.0}};
+        camInfo.P = {{570.3422241210938, 0.0, 319.5, 0.0, 0.0, 570.3422241210938, 239.5, 0.0, 0.0, 0.0, 1.0, 0.0}};
         double D[5] = {0.0,0.0,0.0,0.0,0.0};
         camInfo.D.assign(&D[0], &D[0]+5);
         camInfo.header.frame_id = string("/") + string (m_CameraNamespace)+string("_rgb_optical_frame");
