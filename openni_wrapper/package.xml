@@ -21,6 +21,8 @@
   <build_depend>libudev-dev</build_depend>
   <build_depend>cv_bridge</build_depend>
   <build_depend>class_loader</build_depend>
+  <build_depend>libusb-dev</build_depend>
+
 
   <run_depend>rospy</run_depend>
   <run_depend>roscpp</run_depend>
@@ -28,6 +30,7 @@
   <run_depend>nodelet</run_depend>
   <run_depend>cv_bridge</run_depend>
   <run_depend>class_loader</run_depend>
+  <run_depend>libusb-dev</run_depend>
 
 
 </package>
