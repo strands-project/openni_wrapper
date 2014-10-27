@@ -4,7 +4,7 @@ project(openni_wrapper)
 set(CMAKE_CXX_FLAGS "-g -fPIC -std=c++0x -fpermissive")
 
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs cv_bridge nodelet class_loader)
-find_package( OpenCV REQUIRED )
+find_package(OpenCV REQUIRED )
 find_package(cv_bridge REQUIRED)
 
 set(OPENNI2.2_DIR ../OpenNI2/)
@@ -14,6 +14,8 @@ include_directories(${OPENNI2.2_DIR}/Include)
 
 catkin_package(
    INCLUDE_DIRS include
+   CATKIN_DEPENDS roscpp rospy std_msgs cv_bridge nodelet class_loader
+   DEPENDS libudev-dev libopencv-dev libusb-1.0-dev glut
 )
 
 include_directories(include
@@ -52,3 +54,21 @@ add_dependencies(openni_wrapper openni_wrapper_lib)
 add_custom_command(TARGET openni_wrapper_lib PRE_LINK COMMAND make ARGS -j2 WORKING_DIRECTORY ${OPENNI2.2_BUILD_DIR} COMMENT "Compiling Openni2.2. This could take some time.")
 
 execute_process(COMMAND make WORKING_DIRECTORY ${OPENNI2.2_DIR})
+
+install(TARGETS ${PROJECT_NAME}
+  ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
+  RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+
+install(DIRECTORY include/
+  DESTINATION ${CATKIN_PACKAGE_INCLUDE_DESTINATION}
+)
+
+install(DIRECTORY launch/
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}/launch
+)
+
+install(FILES nodelet_plugins.xml
+  DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
