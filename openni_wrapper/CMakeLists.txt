@@ -15,7 +15,7 @@ include_directories(${OPENNI2.2_DIR}/Include)
 catkin_package(
    INCLUDE_DIRS include
    CATKIN_DEPENDS roscpp rospy std_msgs cv_bridge nodelet class_loader
-   DEPENDS libudev-dev libopencv-dev libusb-1.0-dev
+   DEPENDS libudev-dev libopencv-dev libusb-1.0-dev glut
 )
 
 include_directories(include
