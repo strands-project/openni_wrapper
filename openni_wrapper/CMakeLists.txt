@@ -5,7 +5,6 @@ set(CMAKE_CXX_FLAGS "-g -fPIC -std=c++0x -fpermissive")
 
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs cv_bridge nodelet class_loader)
 find_package(OpenCV REQUIRED )
-find_package(cv_bridge REQUIRED)
 
 set(OPENNI2.2_DIR ../OpenNI2/)
 set(OPENNI2.2_BUILD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI2/)
@@ -55,7 +54,7 @@ add_custom_command(TARGET openni_wrapper_lib PRE_LINK COMMAND make ARGS -j2 WORK
 
 execute_process(COMMAND make WORKING_DIRECTORY ${OPENNI2.2_DIR})
 
-install(TARGETS ${PROJECT_NAME}
+install(TARGETS openni_wrapper_lib openni_wrapper 
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   LIBRARY DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
   RUNTIME DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
