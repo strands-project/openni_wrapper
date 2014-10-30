@@ -3,7 +3,7 @@
 
 #include <stdio.h>
 #include <string>
-#include "OpenNI.h"
+#include <OpenNI2/Include/OpenNI.h>
 #include "ros/ros.h"
 #include <pthread.h>
 

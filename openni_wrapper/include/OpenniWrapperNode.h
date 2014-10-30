@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <iostream>
 #include <stdlib.h>
-#include "OpenNI.h"
+#include <OpenNI2/Include/OpenNI.h>
 #include "ColorCallback.h"
 #include "DepthCallback.h"
 
