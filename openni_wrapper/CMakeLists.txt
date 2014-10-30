@@ -6,10 +6,13 @@ set(CMAKE_CXX_FLAGS "-g -fPIC -std=c++0x -fpermissive")
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs cv_bridge nodelet class_loader)
 find_package(OpenCV REQUIRED )
 
-set(OPENNI2.2_DIR ../OpenNI2/)
+set(OPENNI2.2_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../)
 set(OPENNI2.2_BUILD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI2/)
-link_directories(${OPENNI2.2_DIR}/Bin/x64-Release)
-include_directories(${OPENNI2.2_DIR}/Include)
+
+link_directories(${OPENNI2.2_DIR}/OpenNI2/Bin/x64-Release)
+link_directories(OpenNI2/Bin/x64-Release)
+
+include_directories(${OPENNI2.2_DIR}/OpenNI2/Include)
 
 catkin_package(
    INCLUDE_DIRS include
@@ -19,7 +22,9 @@ catkin_package(
 
 include_directories(include
   ${catkin_INCLUDE_DIRS}
+  ${OPENNI2.2_DIR}
 )
+
 
 set(HDRS
     include/ColorCallback.h
@@ -52,7 +57,7 @@ add_dependencies(openni_wrapper openni_wrapper_lib)
 
 add_custom_command(TARGET openni_wrapper_lib PRE_LINK COMMAND make ARGS -j2 WORKING_DIRECTORY ${OPENNI2.2_BUILD_DIR} COMMENT "Compiling Openni2.2. This could take some time.")
 
-execute_process(COMMAND make WORKING_DIRECTORY ${OPENNI2.2_DIR})
+############## OPENNI_WRAPPER installation ###################
 
 install(TARGETS openni_wrapper_lib openni_wrapper 
   ARCHIVE DESTINATION ${CATKIN_PACKAGE_LIB_DESTINATION}
@@ -70,4 +75,14 @@ install(DIRECTORY launch/
 
 install(FILES nodelet_plugins.xml
   DESTINATION ${CATKIN_PACKAGE_SHARE_DESTINATION}
+)
+
+############## OPENNI2 installation ###################
+
+install(DIRECTORY ${OPENNI2.2_DIR}/OpenNI2/Include/.
+  DESTINATION ${CATKIN_GLOBAL_INCLUDE_DESTINATION}/OpenNI2/Include
+)
+
+install(DIRECTORY ${OPENNI2.2_DIR}/OpenNI2/Bin/x64-Release/.
+  DESTINATION ${CATKIN_GLOBAL_LIB_DESTINATION}
 )

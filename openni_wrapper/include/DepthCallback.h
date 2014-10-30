@@ -2,7 +2,7 @@
 #define __DEPTH_CALLBACK
 
 #include <stdio.h>
-#include "OpenNI.h"
+#include <OpenNI2/Include/OpenNI.h>
  #include "ros/ros.h"
 
 class DepthCallback : public openni::VideoStream::NewFrameListener

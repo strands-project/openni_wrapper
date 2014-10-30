@@ -8,10 +8,10 @@
 #include <iostream>
 
 #include <cv_bridge/cv_bridge.h>
+#include <OpenNI2/Include/OpenNI.h>
 
 #include "sensor_msgs/CameraInfo.h"
 
-#include "OpenNI.h"
 
 using namespace openni;
 using namespace cv;
