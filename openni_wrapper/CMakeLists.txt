@@ -6,8 +6,8 @@ set(CMAKE_CXX_FLAGS "-g -fPIC -std=c++0x -fpermissive")
 find_package(catkin REQUIRED COMPONENTS roscpp rospy std_msgs cv_bridge nodelet class_loader)
 find_package(OpenCV REQUIRED )
 
-set(OPENNI2.2_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../)
-set(OPENNI2.2_BUILD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/../OpenNI2/)
+set(OPENNI2.2_DIR ${CMAKE_CURRENT_SOURCE_DIR})
+set(OPENNI2.2_BUILD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/OpenNI2/)
 
 link_directories(${OPENNI2.2_DIR}/OpenNI2/Bin/x64-Release)
 link_directories(OpenNI2/Bin/x64-Release)
