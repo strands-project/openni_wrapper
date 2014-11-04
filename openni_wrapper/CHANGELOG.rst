@@ -2,8 +2,8 @@
 Changelog for package openni_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.2 (2014-11-04)
+------------------
 * changed path for new OpenNI2 submodule
 * added new location
 * Added install rules for OpenNI2 and updated openni_wrapper to use installed library
