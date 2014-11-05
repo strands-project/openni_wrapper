@@ -2,8 +2,8 @@
 Changelog for package openni_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.3 (2014-11-05)
+------------------
 * Merge pull request `#10 <https://github.com/strands-project/openni_wrapper/issues/10>`_ from RaresAmbrus/hydro-devel
   Re-arranged folder structure of openni_wrapper
 * Removed unnecessary 3rd party folder. Not needed in the release branch
