@@ -2,8 +2,8 @@
 Changelog for package openni_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.4 (2014-11-05)
+------------------
 * Merge pull request `#11 <https://github.com/strands-project/openni_wrapper/issues/11>`_ from RaresAmbrus/hydro-devel
   Removed OpenNI2 submodule and replaced with subtree
 * Merge commit '5b17aecf313fe4fd0f14e382f8ee6dfb4b60a409' as 'OpenNI2'
