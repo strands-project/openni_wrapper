@@ -2,8 +2,8 @@
 Changelog for package openni_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.5 (2014-11-09)
+------------------
 * Merge pull request `#13 <https://github.com/strands-project/openni_wrapper/issues/13>`_ from Jailander/hydro-devel
   final and tested version of env-loader
 * final and tested version of env-loader
