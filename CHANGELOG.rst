@@ -2,8 +2,8 @@
 Changelog for package openni_wrapper
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Forthcoming
------------
+0.0.8 (2015-01-13)
+------------------
 * indigo0.0.7
 * Contributors: Chris Burbridge
 
