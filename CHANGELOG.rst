@@ -7,6 +7,13 @@ Changelog for package openni_wrapper
 * indigo0.0.7
 * Contributors: Chris Burbridge
 
+Forthcoming
+-----------
+* Merge pull request `#19 <https://github.com/strands-project/openni_wrapper/issues/19>`_ from RaresAmbrus/indigo-devel
+  Using the depth sw registration (this should fix the simulation image nodes)
+* Using the depth sw registration (this should fix the simulation image nodes)
+* Contributors: Rares Ambrus, Rareș Ambruș
+
 0.0.9 (2015-03-18)
 ------------------
 * Merge pull request `#18 <https://github.com/strands-project/openni_wrapper/issues/18>`_ from RaresAmbrus/indigo-devel
