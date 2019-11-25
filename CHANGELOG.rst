@@ -7,6 +7,11 @@ Changelog for package openni_wrapper
 * indigo0.0.7
 * Contributors: Chris Burbridge
 
+Forthcoming
+-----------
+* new export class
+* Contributors: Marc Hanheide
+
 0.0.11 (2015-05-22)
 -------------------
 
